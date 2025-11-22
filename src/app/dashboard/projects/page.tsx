@@ -74,7 +74,7 @@ export default function ProjectsPage() {
       }
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects?page=${page}&limit=${ITEMS_PER_PAGE}`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects?page=${page}&limit=${ITEMS_PER_PAGE}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ export default function ProjectsPage() {
         const token = await getToken();
         if (token) {
           const userResponse = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/users/me`,
+            `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           if (userResponse.ok) {

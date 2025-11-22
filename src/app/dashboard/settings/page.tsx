@@ -69,7 +69,7 @@ export default function SettingsPage() {
         const token = await getToken();
         if (!token) throw new Error('Token de autenticação não encontrado.');
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/users/me`,
+          `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         if (!response.ok) throw new Error('Falha ao buscar dados do usuário.');
@@ -116,7 +116,7 @@ export default function SettingsPage() {
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/users/me`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me`,
         {
           method: 'PUT',
           headers: {
@@ -170,7 +170,7 @@ export default function SettingsPage() {
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/users/me/details`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me/details`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

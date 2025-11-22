@@ -38,7 +38,7 @@ export const useInvitationStore = create<InvitationState>((set) => ({
       }
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/users/me/invitations`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me/invitations`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

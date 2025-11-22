@@ -35,7 +35,7 @@ export function UserNav() {
         }
 
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/users/me`,
+          `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

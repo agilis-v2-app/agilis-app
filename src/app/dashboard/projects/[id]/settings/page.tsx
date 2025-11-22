@@ -148,7 +148,7 @@ export default function ProjectSettingsPage() {
       if (!token) throw new Error('Token não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/invitations/sent`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/invitations/sent`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -210,7 +210,7 @@ export default function ProjectSettingsPage() {
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}`,
         {
           method: 'PUT',
           headers: {
@@ -251,7 +251,7 @@ export default function ProjectSettingsPage() {
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/invitations`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/invitations`,
         {
           method: 'POST',
           headers: {
@@ -296,7 +296,7 @@ export default function ProjectSettingsPage() {
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
       await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/members/${memberToRemove.user._id}`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/members/${memberToRemove.user._id}`,
         { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } }
       );
       toast({
@@ -324,7 +324,7 @@ export default function ProjectSettingsPage() {
       if (!token) throw new Error('Token não encontrado.');
 
       await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/invitations/${invitationToCancel._id}/cancel`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/invitations/${invitationToCancel._id}/cancel`,
         { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } }
       );
       toast({ title: 'Sucesso!', description: 'O convite foi cancelado.' });
@@ -348,7 +348,7 @@ export default function ProjectSettingsPage() {
       if (!token) throw new Error('Token não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}`,
         { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } }
       );
 

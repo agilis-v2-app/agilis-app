@@ -68,7 +68,7 @@ function InvitationPopoverContent() {
       const token = await getToken();
       if (!token) throw new Error("Token não encontrado.");
 
-      const url = `${process.env.NEXT_PUBLIC_API_URL}/invitations/${invitationId}/${action}`;
+      const url = `${window.__ENV.NEXT_PUBLIC_API_URL}/invitations/${invitationId}/${action}`;
       const method = action === "accept" ? "POST" : "DELETE";
 
       const response = await fetch(url, {
@@ -246,10 +246,10 @@ export function DashboardHeader() {
       const headers = { Authorization: `Bearer ${token}` };
 
       const [projectsRes, tasksRes] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects?limit=100`, {
+        fetch(`${window.__ENV.NEXT_PUBLIC_API_URL}/projects?limit=100`, {
           headers,
         }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me/tasks?limit=100`, {
+        fetch(`${window.__ENV.NEXT_PUBLIC_API_URL}/users/me/tasks?limit=100`, {
           headers,
         }),
       ]);

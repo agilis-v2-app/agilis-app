@@ -172,7 +172,7 @@ export function TaskKanbanBoard({
       if (!token) throw new Error('Token não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${taskId}`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${taskId}`,
         {
           method: 'PUT',
           headers: {
