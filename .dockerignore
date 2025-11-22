@@ -1,0 +1,31 @@
+# Node and build artifacts
+node_modules
+.next/cache
+.next/build-state.json
+.next/__static
+.next/server
+.next/handler
+.next/cache-loader
+
+# Local env files
+.env
+.env.*.local
+.env.local
+
+# Logs, OS files, editors
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.vscode
+.idea
+
+# Git
+.git
+
+# Docker files should not be part of context
+Dockerfile
+docker-compose*.yml
+
+# PNPM store (local) and lockfile we keep, but ignore pnpm-store if present
+.pnpm-store

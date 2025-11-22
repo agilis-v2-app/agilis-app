@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agilis-app:latest
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env.local
+    restart: unless-stopped
