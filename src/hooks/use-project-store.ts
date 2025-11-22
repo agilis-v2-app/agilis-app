@@ -58,9 +58,9 @@ const useProjectStore = create<ProjectState>((set, get) => ({
       const headers = { Authorization: `Bearer ${token}` };
 
       const [projectResponse, userResponse, statsResponse] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects/${id}`, { headers }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me`, { headers }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects/${id}/stats`, { headers }),
+        fetch(`${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${id}`, { headers }),
+        fetch(`${window.__ENV.NEXT_PUBLIC_API_URL}/users/me`, { headers }),
+        fetch(`${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${id}/stats`, { headers }),
       ]);
 
       if (!projectResponse.ok) throw new Error('Falha ao buscar o projeto.');

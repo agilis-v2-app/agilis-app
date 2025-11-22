@@ -123,7 +123,7 @@ export function TaskCard({
       if (!token) throw new Error("Token não encontrado.");
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${task.id}/assign`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${task.id}/assign`,
         {
           method: "POST",
           headers: {
@@ -157,7 +157,7 @@ export function TaskCard({
       if (!token) throw new Error("Token não encontrado.");
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${task.id}/assign`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${task.id}/assign`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
@@ -188,7 +188,7 @@ export function TaskCard({
       if (!token) throw new Error("Token não encontrado.");
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${task.id}`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${task.id}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },

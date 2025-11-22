@@ -128,7 +128,7 @@ export function EditTaskDialog({
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${task.id}`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${task.id}`,
         {
           method: 'PUT',
           headers: {

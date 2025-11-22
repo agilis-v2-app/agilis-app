@@ -52,7 +52,7 @@ export default function InvitationsPage() {
       const token = await getToken();
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
-      const url = `${process.env.NEXT_PUBLIC_API_URL}/invitations/${invitationId}/${action}`;
+      const url = `${window.__ENV.NEXT_PUBLIC_API_URL}/invitations/${invitationId}/${action}`;
       const method = action === 'accept' ? 'POST' : 'DELETE';
 
       const response = await fetch(url, {

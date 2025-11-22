@@ -95,7 +95,7 @@ export function NewTaskDialog({
       const token = await getToken();
       if (!token) throw new Error('Token de autenticação não encontrado.');
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${taskId}/assign`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks/${taskId}/assign`,
         {
           method: 'POST',
           headers: {
@@ -137,7 +137,7 @@ export function NewTaskDialog({
       };
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${projectId}/tasks`,
         {
           method: 'POST',
           headers: {

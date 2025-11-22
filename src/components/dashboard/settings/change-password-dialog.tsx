@@ -69,7 +69,7 @@ export function ChangePasswordDialog({
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/users/me/password`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me/password`,
         {
           method: 'POST',
           headers: {

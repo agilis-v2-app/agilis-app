@@ -116,7 +116,7 @@ export function MyTasks() {
       }
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/users/me/tasks`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me/tasks`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -163,7 +163,7 @@ export function MyTasks() {
       if (!token) throw new Error('Token não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects/${task.projectId}/tasks/${task.id}`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects/${task.projectId}/tasks/${task.id}`,
         {
           method: 'PUT',
           headers: {

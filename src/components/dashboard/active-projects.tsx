@@ -63,7 +63,7 @@ export function ActiveProjects() {
       }
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -131,7 +131,7 @@ export function ActiveProjects() {
         const token = await getToken();
         if (token) {
           const userResponse = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/users/me`,
+            `${window.__ENV.NEXT_PUBLIC_API_URL}/users/me`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           if (userResponse.ok) {

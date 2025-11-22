@@ -55,11 +55,11 @@ export function DashboardOverviewHeader() {
 
         const [userResponse, tasksResponse, projectsResponse] =
           await Promise.all([
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me`, { headers }),
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me/tasks`, {
+            fetch(`${window.__ENV.NEXT_PUBLIC_API_URL}/users/me`, { headers }),
+            fetch(`${window.__ENV.NEXT_PUBLIC_API_URL}/users/me/tasks`, {
               headers,
             }),
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`, { headers }),
+            fetch(`${window.__ENV.NEXT_PUBLIC_API_URL}/projects`, { headers }),
           ]);
 
         if (!userResponse.ok)

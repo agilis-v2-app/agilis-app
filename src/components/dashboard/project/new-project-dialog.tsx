@@ -67,7 +67,7 @@ export function NewProjectDialog({
       if (!token) throw new Error('Token de autenticação não encontrado.');
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/projects`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/projects`,
         {
           method: 'POST',
           headers: {

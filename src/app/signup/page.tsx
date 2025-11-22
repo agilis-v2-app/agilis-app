@@ -58,7 +58,7 @@ export default function SignUpPage() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/auth/register`,
+        `${window.__ENV.NEXT_PUBLIC_API_URL}/auth/register`,
         {
           method: 'POST',
           headers: {
