@@ -17,10 +17,10 @@ RUN pnpm build
 # Run
 FROM node:20-alpine AS runner
 WORKDIR /app
+
 ENV NODE_ENV=production
 ENV PORT=3001
 
-# pnpm no runtime (se precisar rodar scripts)
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Copia o standalone
